@@ -40,6 +40,13 @@
 * Browsers: last 4 version
 */
 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -391,12 +398,7 @@ p {
 }
 
 .sidebar .nav-links li:hover {
-  padding-bottom: 0;
   background: #2B3748;
-}
-
-.sidebar .nav-links li:hover .icon-link {
-  padding-bottom: 16px;
 }
 
 .sidebar .nav-links li div {
@@ -438,7 +440,9 @@ p {
 }
 
 .sidebar .nav-links li .sub-menu li {
-  padding: 4px 0 0 58px;
+  padding-top: 5px;
+  padding-bottom: 5.5px;
+  padding-left: 58px;
 }
 
 .sidebar .nav-links li .sub-menu li:hover {

@@ -31,6 +31,14 @@ if (!sidebar.matches("close")) {
 
     item.addEventListener("click", (e) => {
       item.classList.toggle("showMenu");
+      if (item.matches(".showMenu")) {
+        item.style.paddingBottom = "0";
+        const iconLink = item.querySelector(".icon-link");
+        iconLink.style.paddingBottom = "16px";
+      } else {
+        iconLink.style.paddingBottom = "0px";
+        item.style.paddingBottom = "16px";
+      }
     });
   });
   // for rotating clicked item's arrow
