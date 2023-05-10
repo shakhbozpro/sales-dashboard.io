@@ -33,6 +33,13 @@
 * Browsers: last 4 version
 */
 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -380,14 +387,16 @@ p {
   position: relative;
   list-style: none;
   padding: 16px 0;
-  -webkit-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  transition: all 0.4s ease;
   cursor: pointer;
 }
 
 .sidebar .nav-links li:hover {
+  padding-bottom: 0;
   background: #2B3748;
+}
+
+.sidebar .nav-links li:hover .icon-link {
+  padding-bottom: 16px;
 }
 
 .sidebar .nav-links li div {
@@ -421,7 +430,7 @@ p {
 
 .sidebar .nav-links li .sub-menu {
   min-width: 170px;
-  padding: 6px 0 0 58px;
+  background-color: #162130;
   display: none;
 }
 .sidebar .nav-links li.showMenu .sub-menu {
@@ -429,11 +438,11 @@ p {
 }
 
 .sidebar .nav-links li .sub-menu li {
-  padding: 4px 0;
+  padding: 4px 0 0 58px;
 }
 
 .sidebar .nav-links li .sub-menu li:hover {
-  background-color: inherit;
+  background-color:#2B3748;
 }
 
 .sidebar .nav-links li .arrow {
