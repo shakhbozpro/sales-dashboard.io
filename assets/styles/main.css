@@ -422,7 +422,6 @@ p {
 .sidebar .nav-links li .sub-menu {
   min-width: 170px;
   padding: 6px 0 0 58px;
-  background-color: #2B3748;
   display: none;
 }
 .sidebar .nav-links li.showMenu .sub-menu {
