@@ -160,7 +160,7 @@
           </div>
 
           <!-- Desctop header text -->
-          <div class="header-text hidden mb-4 py-4 font-medium text-[13px] leading-[165%] md:mb-0 lg:items-center">
+          <div class="header-text hidden mb-4 font-medium text-[13px] leading-[165%] md:mb-0 lg:items-center">
             <p class="text-[#526484]">
               <img class="mt-[2px] mr-[6px] float-left" src="./assets/images/h-question-start.svg" alt="Question letter"
                 width="16" height="16">
@@ -175,33 +175,115 @@
           <!-- Desctop adim panel -->
           <div class="header-admin-panel hidden lg:flex lg:items-center lg:gap-x-5">
 
-            <div class="lang-dropdown relative py-[21px] px-1 cursor-pointer">
+            <div
+              class="lang-dropdown relative py-[21px] px-1 font-bold text-[15px] leading-5 tracking-[0.20px] text-[#576371] cursor-pointer">
               <div class="lang-wrapper flex items-center gap-x-2">
-                <span class="selected-lang">Us</span>
-                <img class="selected-lang-img max-w-[22px] min-h-[23px] rounded-full" src="./assets/images/usa.png"
-                  alt="Usa flag" width="22" height="22">
+                <img class="selected-lang-img max-w-[22px] h-[17px]" src="./assets/images/usa.png" alt="Usa flag"
+                  width="22" height="22">
+                <span class="selected-lang">Engish</span>
               </div>
 
               <ul
-                class="lagns-list absolute left-[50%] translate-x-[-50%] w-auto py-3 px-3 bg-[#6576ff] cursor-pointer">
-                <li class="lang-item flex items-center gap-x-2 mb-3">
-                  <span class="selected-lang-text text-white">Us</span>
-                  <img class="rounded-full" src="./assets/images/usa.png" alt="">
+                class="lagns-list absolute right-0 w-[130px] py-3 px-3 bg-white rounded-[6px] border-[1px] border-[#d8d8d8] cursor-pointer">
+                <li class="lang-item flex items-center gap-x-2 mb-4">
+                  <img class="max-w-[22px] w-full h-[17px]" src="./assets/images/usa.png" alt="">
+                  <span class="selected-lang-text">English</span>
                 </li>
-                <li class="lang-item flex items-center gap-x-2 mb-3">
-                  <span class="selected-lang-text text-white">Ru</span>
-                  <img class="max-w-[22px] min-h-[22px] rounded-full" src="./assets/images/flag-russia.jpg" alt=""
-                    width="22" height="22">
+                <li class="lang-item flex items-center gap-x-2 mb-4">
+                  <img class="max-w-[22px] w-full h-[17px]" src="./assets/images/flag-russia.jpg" alt="" width="22"
+                    height="22">
+                  <span class="selected-lang-text">Russian</span>
                 </li>
                 <li class="lang-item flex items-center gap-x-2">
-                  <span class="selected-lang-text text-white">Uz</span>
-                  <img class="max-w-[22px] min-h-[22px] rounded-full" src="./assets/images/flag-uzb.jpg" alt=""
-                    width="22" height="22">
+                  <img class="max-w-[22px] w-full h-[17px]" src="./assets/images/flag-uzb.jpg" alt="" width="22"
+                    height="22">
+                  <span class="selected-lang-text">Uzbek</span>
                 </li>
               </ul>
             </div>
 
-            <div class="header-admin relative flex items-center py-4 cursor-pointer">
+            <div>
+              <button id="ntf-btn" class="notification-btn p-4">
+                <img src="./assets/images/notification.svg" alt="Notification" width="24" height="26">
+              </button>
+              <div
+                class="notifications-wrapper hidden absolute top-[65px] right-[16.5%] z-10 max-w-[320px] w-full max-h-[330px] h-full bg-white rounded-[6px] border-[1px] border-[#d8d8d8] overflow-y-auto">
+                <div
+                  class="flex items-center justify-between p-3 font-medium leading-5 tracking-[0.20px] text-[#576371]">
+                  Notification
+                  <button class="text-[13px] underline capitalize">Clear all</button>
+                </div>
+
+                <hr>
+
+                <!-- Today's notification wrapper -->
+                <div class="pt-3">
+                  <span
+                    class="block mb-1 pl-3 font-medium leading-5 tracking-[0.20px] text-xs text-[#576371] uppercase">Today</span>
+                  <ul>
+                    <li class="relative flex items-center gap-x-3 py-3 px-3 text-[#576371]">
+                      <span class="w-[33px] h-[33px] rounded-full bg-purple-950"></span>
+                      <div class="leading-5 tracking-[0.20px] text-sm">
+                        <span class="block mb-1 font-medium">Datacorp</span>
+                        <p class="text-xs">Caleb Flakelar commented om Admin</p>
+                      </div>
+                      <span class="absolute top-3 right-3 font-medium leading-5 tracking-[0.20px] text-xs">1 min
+                        ago</span>
+                    </li>
+                    <li class="relative flex items-center gap-x-3 py-3 px-3 text-[#576371]">
+                      <span class="w-[33px] h-[33px] rounded-full bg-slate-600"></span>
+                      <div class="leading-5 tracking-[0.20px] text-sm">
+                        <span class="block mb-1 font-medium">Admin</span>
+                        <p class="text-xs">New user registered</p>
+                      </div>
+                      <span class="absolute top-3 right-3 font-medium leading-5 tracking-[0.20px] text-xs">1 hr
+                        ago</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Yesterday's notification wrapper -->
+                <div class="pt-3">
+                  <span
+                    class="block mb-1 pl-3 font-medium leading-5 tracking-[0.20px] text-xs text-[#576371] uppercase">Yesterday</span>
+                  <ul>
+                    <li class="relative flex items-center gap-x-3 py-3 px-3 text-[#576371]">
+                      <span class="w-[33px] h-[33px] rounded-full">
+                        <img src="./assets/images/timothy-moreno.png" alt="Timothy Moreno" width="33" height="33">
+                      </span>
+                      <div class="leading-5 tracking-[0.20px] text-sm">
+                        <span class="block mb-1 font-medium">Cristina Pride</span>
+                        <p class="text-xs">Lorem ipsum dolor sit amet.</p>
+                      </div>
+                      <span class="absolute top-3 right-3 font-medium leading-5 tracking-[0.20px] text-xs">1 day
+                        ago</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Last month's notification wrapper -->
+                <div class="pt-3">
+                  <span
+                    class="block mb-1 pl-3 font-medium leading-5 tracking-[0.20px] text-xs text-[#576371] uppercase">31
+                    Jan 2023</span>
+                  <ul>
+                    <li class="relative flex items-center gap-x-3 py-3 px-3 text-[#576371]">
+                      <span class="w-[33px] h-[33px] rounded-full">
+                        <img src="./assets/images/timothy-moreno.png" alt="Timothy Moreno" width="33" height="33">
+                      </span>
+                      <div class="leading-5 tracking-[0.20px] text-sm">
+                        <span class="block mb-1 font-medium">Cristina Pride</span>
+                        <p class="text-xs">Lorem ipsum dolor sit amet.</p>
+                      </div>
+                      <span class="absolute top-3 right-3 font-medium leading-5 tracking-[0.20px] text-xs">1 day
+                        ago</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="header-admin relative flex items-center py-4 pl-3 cursor-pointer">
               <div class="w-8 h-8 mr-4 p-[9px] bg-[#6576ff] rounded-full">
                 <img src="./assets/images/administrator.svg" alt="Administrator" width="14" height="14">
               </div>
@@ -211,21 +293,22 @@
                 <div class="header-admin-dropdown">
                   <a class="font-bold text-xs leading-4" href="#">Abu bin
                     ishityak</a>
-                  <ul class="header-admin-dropdown-content absolute right-0 left-0 w-[155px] bg-[#f9f9f9]">
+                  <ul
+                    class="header-admin-dropdown-content absolute right-0 left-0 w-[167px] py-2 font-bold text-[15px] leading-5 tracking-[0.20px] text-[#576371] bg-white rounded-[7px] border-[1px] border-[#d8d8d8]">
                     <li>
-                      <a class="block py-2 px-3 hover:text-[#596cff]" href="#">
+                      <a class="block py-[10px] px-4 hover:text-[#596cff]" href="#">
                         <i class="fa-solid fa-user mr-2"></i>
                         Pfofil
                       </a>
                     </li>
                     <li>
-                      <a class="block py-2 px-3 hover:text-[#596cff]" href="#">
+                      <a class="block py-[10px] px-4 hover:text-[#596cff]" href="#">
                         <i class="fa-solid fa-history mr-2"></i>
                         Update
                       </a>
                     </li>
                     <li>
-                      <a class="block py-2 px-3 hover:text-[#596cff]" href="#">
+                      <a class="block py-[10px] px-4 hover:text-[#596cff]" href="#">
                         <i class="fa-solid fa-gear mr-2"></i>
                         Settings
                       </a>
@@ -241,9 +324,6 @@
                 </div>
               </div>
             </div>
-            <button>
-              <img src="./assets/images/notification.svg" alt="Notification" width="24" height="26">
-            </button>
           </div>
         </div>
       </div>

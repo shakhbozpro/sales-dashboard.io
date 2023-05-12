@@ -47,6 +47,13 @@
 * Browsers: last 4 version
 */
 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -578,6 +585,9 @@ p {
 .header-text {
   font-family: 'Roboto', 'Arial', sans-serif;
 }
+.lang-dropdown {
+    font-family: "Nunito", "Arial", sans-serif;
+}
 .lagns-list {
   top: 20px;
   opacity: 0;
@@ -592,6 +602,18 @@ p {
   opacity: 1;
   pointer-events: all;
 }
+
+.notifications-wrapper::-webkit-scrollbar {
+  width: 5px;
+  background-color: inherit;
+}
+
+.notifications-wrapper::-webkit-scrollbar-thumb {
+  height: 16px;
+  background-color: #c1c0c0;
+  border-radius: 8px;
+}
+
 .header-admin-panel {
   margin-left: auto;
 }
@@ -636,22 +658,19 @@ p {
   }
 }
 .header-admin-dropdown-content {
-  top: 20px;
+  top: 65px !important;
+  font-family: "Nunito", "Arial", sans-serif;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   opacity: 0;
   pointer-events: none;
-  -webkit-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 .header-admin-dropdown:hover .header-admin-dropdown-content {
-  top: 140%;
   opacity: 1;
   pointer-events: all;
 }
 .header-admin:hover .header-admin-dropdown-content {
-  top: 101%;
   opacity: 1;
   pointer-events: all;
 }

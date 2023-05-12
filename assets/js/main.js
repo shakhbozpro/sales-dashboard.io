@@ -7,6 +7,8 @@ const sidebarDropdownItems = document.querySelectorAll(".sidebar-item");
 const arrow = document.querySelectorAll('.arrow');
 const mobilesidebarBtn = document.querySelector(".mobile-sidebar-btn");
 const langDropdowns = document.querySelectorAll(".lang-dropdown");
+const ntfBtn = document.getElementById("ntf-btn");
+const ntf = document.querySelector(".notifications-wrapper");
 
 // ! Sidebar's button's onclick event
 sidebarBtn.addEventListener("click", function () {
@@ -92,6 +94,12 @@ langDropdowns.forEach(dropdown => {
     })
   })
 });
+
+// ! Function for opening and closing notifications
+ntfBtn.addEventListener("click", myFunction);
+function myFunction() {
+  ntf.classList.toggle("hidden");
+}
 
 // ! Data for the bar chart1
 const data = [23, 20, 28, 18, 21, 31, 29, 26, 30, 24, 28, 43];
@@ -251,4 +259,4 @@ supportRequestText.forEach(item => {
   if (item.textContent === "Solved") {
     item.classList.add("text-[#1EE0AC]", "support-request-solved");
   }
-})
+});
