@@ -54,6 +54,13 @@
 * Browsers: last 4 version
 */
 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -330,12 +337,18 @@ p {
 /* ! Sidebar styles */
 .sidebar {
   position: fixed;
-  top: 75px;
+  top: 83px;
   width: 260px;
   font-family: "Nunito", "Arial", sans-serif;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+@media only screen and (min-width: 1024px) {
+  .sidebar {
+    top: 67px;
+  }
 }
 
 .sidebar::-webkit-scrollbar {
@@ -349,7 +362,7 @@ p {
 .logo-details {
   display: none;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1138px) {
   .logo-details {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -603,6 +616,28 @@ p {
   pointer-events: all;
 }
 
+.mobile-notifications-wrapper {
+ right: 0; 
+}
+
+@media only screen and (min-width: 375px) {
+  .mobile-notifications-wrapper {
+    top: 18.7%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile-notifications-wrapper {
+    right: 10%;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .notifications-wrapper {
+    right: 17%;
+  }
+}
+
 .notifications-wrapper::-webkit-scrollbar {
   width: 5px;
   background-color: inherit;
@@ -622,7 +657,7 @@ p {
     position: fixed;
     top: 0;
     left: 0;
-  }
+  } 
   .sidebar-top {
     display: -webkit-box;
     display: -ms-flexbox;

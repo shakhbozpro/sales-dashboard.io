@@ -104,7 +104,7 @@
   <div class="main-content relative">
 
     <!-- ? Header start -->
-    <header class="header bg-white border-b-[1px] border-[#dbdfea]">
+    <header class="header fixed top-0 w-full bg-white border-b-[1px] border-[#dbdfea] xl:static">
       <div class="handle-container">
         <div class="lg:flex lg:justify-between lg:items-center">
           <div class="header-contents-wrapper flex justify-between items-center py-4">
@@ -120,9 +120,141 @@
 
             <!-- Mobile admin panel -->
             <div class="flex items-center gap-x-4 lg:hidden">
-              <button class="notification-btn">
+              <button class="notification-btn p-3">
                 <img src="./assets/images/notification.svg" alt="Notification" width="24" height="26">
               </button>
+              <div
+                class="mobile-notifications-wrapper hidden absolute top-[65px] z-10 max-w-[320px] w-full max-h-[330px] h-full bg-white rounded-[6px] border-[1px] border-[#d8d8d8] overflow-y-auto">
+                <div
+                  class="flex items-center justify-between p-3 font-medium leading-5 tracking-[0.20px] text-[#576371]">
+                  Notification
+                  <button class="text-[13px] underline capitalize">Clear all</button>
+                </div>
+
+                <hr>
+
+                <!-- Today's notification wrapper -->
+                <div class="pt-3">
+                  <span
+                    class="block mb-1 pl-3 font-medium leading-5 tracking-[0.20px] text-xs text-[#576371] uppercase">Today</span>
+                  <ul>
+                    <li class="relative flex items-center gap-x-3 py-3 pr-4 pl-3 text-[#576371]">
+                      <span class="w-[33px] h-[33px] rounded-full bg-purple-950"></span>
+                      <div class="leading-5 tracking-[0.20px] text-sm">
+                        <span class="block mb-1 font-medium">Datacorp</span>
+                        <p class="text-xs">Caleb Flakelar commented om Admin</p>
+                      </div>
+                      <span class="absolute top-3 right-3 font-medium leading-5 tracking-[0.20px] text-xs">1 min
+                        ago</span>
+                      <button class="notification-dropdown-btn absolute right-2 bottom-[18px]">
+                        <img class="rotate-90" src="./assets/images/transactions-btn.svg" alt="">
+                      </button>
+
+                      <ul
+                        class="notification-item-dropdown hidden absolute right-3 bottom-[-55px] z-10 py-[6px] px-3 leading-5 tracking-[0.20px] text-[14px] text-[#576371] bg-white rounded-[4px] border-[1px] border-[#d8d8d8] whitespace-nowrap">
+                        <li class="mb-2">
+                          <a href="#">
+                            <i class="fa-solid fa-trash"></i>
+                            Delete
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i class="fa-sharp fa-solid fa-circle-check"></i>
+                            Mark as read
+                          </a>
+                        </li>
+                      </ul>
+
+                    </li>
+                    <li class="relative flex items-center gap-x-3 py-3 px-3 text-[#576371]">
+                      <span class="w-[33px] h-[33px] rounded-full bg-slate-600"></span>
+                      <div class="leading-5 tracking-[0.20px] text-sm">
+                        <span class="block mb-1 font-medium">Admin</span>
+                        <p class="text-xs">New user registered</p>
+                      </div>
+                      <span class="absolute top-3 right-3 font-medium leading-5 tracking-[0.20px] text-xs">1 hr
+                        ago</span>
+                      <button class="notification-dropdown-btn absolute right-2 bottom-[18px]">
+                        <img class="rotate-90" src="./assets/images/transactions-btn.svg" alt="">
+                      </button>
+
+                      <ul
+                        class="notification-item-dropdown hidden absolute right-3 bottom-[-55px] z-10 py-[6px] px-3 leading-5 tracking-[0.20px] text-[14px] text-[#576371] bg-white rounded-[4px] border-[1px] border-[#d8d8d8] whitespace-nowrap">
+                        <li class="mb-2">
+                          <a href="#">
+                            <i class="fa-solid fa-trash"></i>
+                            Delete
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i class="fa-sharp fa-solid fa-circle-check"></i>
+                            Mark as read
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Yesterday's notification wrapper -->
+                <div class="pt-3">
+                  <span
+                    class="block mb-1 pl-3 font-medium leading-5 tracking-[0.20px] text-xs text-[#576371] uppercase">Yesterday</span>
+                  <ul>
+                    <li class="relative flex items-center gap-x-3 py-3 px-3 text-[#576371]">
+                      <span class="w-[33px] h-[33px] rounded-full">
+                        <img src="./assets/images/timothy-moreno.png" alt="Timothy Moreno" width="33" height="33">
+                      </span>
+                      <div class="leading-5 tracking-[0.20px] text-sm">
+                        <span class="block mb-1 font-medium">Cristina Pride</span>
+                        <p class="text-xs">Lorem ipsum dolor sit amet.</p>
+                      </div>
+                      <span class="absolute top-3 right-3 font-medium leading-5 tracking-[0.20px] text-xs">1 day
+                        ago</span>
+                      <button class="notification-dropdown-btn absolute right-2 bottom-[18px]">
+                        <img class="rotate-90" src="./assets/images/transactions-btn.svg" alt="">
+                      </button>
+
+                      <ul
+                        class="notification-item-dropdown hidden absolute right-3 bottom-[-55px] z-10 py-[6px] px-3 leading-5 tracking-[0.20px] text-[14px] text-[#576371] bg-white rounded-[4px] border-[1px] border-[#d8d8d8] whitespace-nowrap">
+                        <li class="mb-2">
+                          <a href="#">
+                            <i class="fa-solid fa-trash"></i>
+                            Delete
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i class="fa-sharp fa-solid fa-circle-check"></i>
+                            Mark as read
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Last month's notification wrapper -->
+                <div class="pt-3">
+                  <span
+                    class="block mb-1 pl-3 font-medium leading-5 tracking-[0.20px] text-xs text-[#576371] uppercase">31
+                    Jan 2023</span>
+                  <ul>
+                    <li class="relative flex items-center gap-x-3 py-3 px-3 text-[#576371]">
+                      <span class="w-[33px] h-[33px] rounded-full">
+                        <img src="./assets/images/timothy-moreno.png" alt="Timothy Moreno" width="33" height="33">
+                      </span>
+                      <div class="leading-5 tracking-[0.20px] text-sm">
+                        <span class="block mb-1 font-medium">Cristina Pride</span>
+                        <p class="text-xs">Lorem ipsum dolor sit amet.</p>
+                      </div>
+                      <span class="absolute top-3 right-3 font-medium leading-5 tracking-[0.20px] text-xs">13:58</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
 
               <div class="header-admin-dropdown relative">
                 <button>
@@ -203,11 +335,11 @@
             </div>
 
             <div>
-              <button id="ntf-btn" class="notification-btn p-4">
+              <button id="ntf-btn" class="notification-btn p-3">
                 <img src="./assets/images/notification.svg" alt="Notification" width="24" height="26">
               </button>
               <div
-                class="notifications-wrapper hidden absolute top-[65px] right-[16.5%] z-10 max-w-[320px] w-full max-h-[330px] h-full bg-white rounded-[6px] border-[1px] border-[#d8d8d8] overflow-y-auto">
+                class="notifications-wrapper hidden absolute top-[65px] z-10 max-w-[320px] w-full max-h-[330px] h-full bg-white rounded-[6px] border-[1px] border-[#d8d8d8] overflow-y-auto lg:right-[19%]">
                 <div
                   class="flex items-center justify-between p-3 font-medium leading-5 tracking-[0.20px] text-[#576371]">
                   Notification
@@ -221,7 +353,7 @@
                   <span
                     class="block mb-1 pl-3 font-medium leading-5 tracking-[0.20px] text-xs text-[#576371] uppercase">Today</span>
                   <ul>
-                    <li class="relative flex items-center gap-x-3 py-3 px-3 text-[#576371]">
+                    <li class="relative flex items-center gap-x-3 py-3 pr-4 pl-3 text-[#576371]">
                       <span class="w-[33px] h-[33px] rounded-full bg-purple-950"></span>
                       <div class="leading-5 tracking-[0.20px] text-sm">
                         <span class="block mb-1 font-medium">Datacorp</span>
@@ -229,6 +361,26 @@
                       </div>
                       <span class="absolute top-3 right-3 font-medium leading-5 tracking-[0.20px] text-xs">1 min
                         ago</span>
+                      <button class="notification-dropdown-btn absolute right-2 bottom-[18px]">
+                        <img class="rotate-90" src="./assets/images/transactions-btn.svg" alt="">
+                      </button>
+
+                      <ul
+                        class="notification-item-dropdown hidden absolute right-3 bottom-[-55px] z-10 py-[6px] px-3 leading-5 tracking-[0.20px] text-[14px] text-[#576371] bg-white rounded-[4px] border-[1px] border-[#d8d8d8] whitespace-nowrap">
+                        <li class="mb-2">
+                          <a href="#">
+                            <i class="fa-solid fa-trash"></i>
+                            Delete
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i class="fa-sharp fa-solid fa-circle-check"></i>
+                            Mark as read
+                          </a>
+                        </li>
+                      </ul>
+
                     </li>
                     <li class="relative flex items-center gap-x-3 py-3 px-3 text-[#576371]">
                       <span class="w-[33px] h-[33px] rounded-full bg-slate-600"></span>
@@ -238,6 +390,25 @@
                       </div>
                       <span class="absolute top-3 right-3 font-medium leading-5 tracking-[0.20px] text-xs">1 hr
                         ago</span>
+                      <button class="notification-dropdown-btn absolute right-2 bottom-[18px]">
+                        <img class="rotate-90" src="./assets/images/transactions-btn.svg" alt="">
+                      </button>
+
+                      <ul
+                        class="notification-item-dropdown hidden absolute right-3 bottom-[-55px] z-10 py-[6px] px-3 leading-5 tracking-[0.20px] text-[14px] text-[#576371] bg-white rounded-[4px] border-[1px] border-[#d8d8d8] whitespace-nowrap">
+                        <li class="mb-2">
+                          <a href="#">
+                            <i class="fa-solid fa-trash"></i>
+                            Delete
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i class="fa-sharp fa-solid fa-circle-check"></i>
+                            Mark as read
+                          </a>
+                        </li>
+                      </ul>
                     </li>
                   </ul>
                 </div>
@@ -257,6 +428,25 @@
                       </div>
                       <span class="absolute top-3 right-3 font-medium leading-5 tracking-[0.20px] text-xs">1 day
                         ago</span>
+                      <button class="notification-dropdown-btn absolute right-2 bottom-[18px]">
+                        <img class="rotate-90" src="./assets/images/transactions-btn.svg" alt="">
+                      </button>
+
+                      <ul
+                        class="notification-item-dropdown hidden absolute right-3 bottom-[-55px] z-10 py-[6px] px-3 leading-5 tracking-[0.20px] text-[14px] text-[#576371] bg-white rounded-[4px] border-[1px] border-[#d8d8d8] whitespace-nowrap">
+                        <li class="mb-2">
+                          <a href="#">
+                            <i class="fa-solid fa-trash"></i>
+                            Delete
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i class="fa-sharp fa-solid fa-circle-check"></i>
+                            Mark as read
+                          </a>
+                        </li>
+                      </ul>
                     </li>
                   </ul>
                 </div>
@@ -275,8 +465,7 @@
                         <span class="block mb-1 font-medium">Cristina Pride</span>
                         <p class="text-xs">Lorem ipsum dolor sit amet.</p>
                       </div>
-                      <span class="absolute top-3 right-3 font-medium leading-5 tracking-[0.20px] text-xs">1 day
-                        ago</span>
+                      <span class="absolute top-3 right-3 font-medium leading-5 tracking-[0.20px] text-xs">13:58</span>
                     </li>
                   </ul>
                 </div>
@@ -291,10 +480,10 @@
                 <span
                   class="header-admin-text mb-[3px] font-medium text-[11px] leading-[100%] text-[#6576ff]">Administrator</span>
                 <div class="header-admin-dropdown">
-                  <a class="font-bold text-xs leading-4" href="#">Abu bin
+                  <a class="font-semibold text-xs leading-4" href="#">Abu bin
                     ishityak</a>
                   <ul
-                    class="header-admin-dropdown-content absolute right-0 left-0 w-[167px] py-2 font-bold text-[15px] leading-5 tracking-[0.20px] text-[#576371] bg-white rounded-[7px] border-[1px] border-[#d8d8d8]">
+                    class="header-admin-dropdown-content absolute right-0 left-0 w-[167px] py-2 font-medium text-[15px] leading-5 tracking-[0.20px] text-[#576371] bg-white rounded-[7px] border-[1px] border-[#d8d8d8]">
                     <li>
                       <a class="block py-[10px] px-4 hover:text-[#596cff]" href="#">
                         <i class="fa-solid fa-user mr-2"></i>
@@ -332,7 +521,7 @@
 
     <!-- ? Main start -->
     <main>
-      <section class="mt-4 md:pt-8">
+      <section class="mt-4 md:mt-0 md:pt-8">
         <div class="handle-container">
           <div class="md:flex md:justify-between md:items-center">
             <div class="mb-3 md:mb-0">

@@ -7,8 +7,11 @@ const sidebarDropdownItems = document.querySelectorAll(".sidebar-item");
 const arrow = document.querySelectorAll('.arrow');
 const mobilesidebarBtn = document.querySelector(".mobile-sidebar-btn");
 const langDropdowns = document.querySelectorAll(".lang-dropdown");
+const mobileNtfBtn = document.querySelector(".notification-btn");
+const mobileNtf = document.querySelector(".mobile-notifications-wrapper");
 const ntfBtn = document.getElementById("ntf-btn");
 const ntf = document.querySelector(".notifications-wrapper");
+const notiDropdownBtns = document.querySelectorAll(".notification-dropdown-btn");
 
 // ! Sidebar's button's onclick event
 sidebarBtn.addEventListener("click", function () {
@@ -80,10 +83,8 @@ window.addEventListener('resize', checkWindowSize);
 
 // ! Choosing header's language dropdown value
 langDropdowns.forEach(dropdown => {
-  const selectedLang = dropdown.querySelector(".lang-wrapper");
   const selectedLangText = document.querySelector('.selected-lang');
   const selectedLangImg = document.querySelector('.selected-lang-img');
-  const langsMenu = dropdown.querySelector('.lagns-list');
   const langsOptions = dropdown.querySelectorAll('.lang-item');
 
   langsOptions.forEach(option => {
@@ -96,10 +97,24 @@ langDropdowns.forEach(dropdown => {
 });
 
 // ! Function for opening and closing notifications
-ntfBtn.addEventListener("click", myFunction);
-function myFunction() {
+mobileNtfBtn.addEventListener("click", openMobileNotification);
+function openMobileNotification() {
+  mobileNtf.classList.toggle("hidden");
+}
+
+ntfBtn.addEventListener("click", openNotification);
+function openNotification() {
   ntf.classList.toggle("hidden");
 }
+
+// ! Norification dropdown button click
+notiDropdownBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const parentElement = btn.parentElement;
+    const dropdownList = parentElement.querySelector(".notification-item-dropdown");
+    dropdownList.classList.toggle("hidden")
+  })
+});
 
 // ! Data for the bar chart1
 const data = [23, 20, 28, 18, 21, 31, 29, 26, 30, 24, 28, 43];
