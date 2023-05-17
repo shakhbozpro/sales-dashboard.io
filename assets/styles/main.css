@@ -68,6 +68,13 @@
 * Browsers: last 4 version
 */
 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -627,11 +634,11 @@ p {
  right: 0; 
 }
 
-/* @media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .mobile-notifications-wrapper {
     right: 10%;
   }
-} */
+}
 
 @media only screen and (min-width: 1300px) {
   .notifications-wrapper {
