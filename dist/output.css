@@ -576,10 +576,6 @@ video {
   top: 82px;
 }
 
-.top-\[85px\] {
-  top: 85px;
-}
-
 .z-10 {
   z-index: 10;
 }
@@ -1409,10 +1405,6 @@ video {
 }
 
 @media (min-width: 768px) {
-  .md\:top-\[65px\] {
-    top: 65px;
-  }
-
   .md\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;

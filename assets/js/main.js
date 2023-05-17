@@ -12,6 +12,8 @@ const mobileNtf = document.querySelector(".mobile-notifications-wrapper");
 const ntfBtn = document.getElementById("ntf-btn");
 const ntf = document.querySelector(".notifications-wrapper");
 const notiDropdownBtns = document.querySelectorAll(".notification-dropdown-btn");
+const adminDropdownBtn = document.querySelector(".header-admin-dropdown-btn");
+const adminDropdownContent = document.querySelector(".header-admin-dropdown-content")
 
 // ! Sidebar's button's onclick event
 sidebarBtn.addEventListener("click", function () {
@@ -115,6 +117,11 @@ notiDropdownBtns.forEach(btn => {
     dropdownList.classList.toggle("hidden")
   })
 });
+
+// ! Mobile admin onclick event
+adminDropdownBtn.addEventListener("click", () => {
+  adminDropdownContent.classList.toggle("hidden");
+})
 
 // ! Data for the bar chart1
 const data = [23, 20, 28, 18, 21, 31, 29, 26, 30, 24, 28, 43];
