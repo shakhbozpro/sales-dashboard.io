@@ -627,11 +627,11 @@ p {
  right: 0; 
 }
 
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
   .mobile-notifications-wrapper {
     right: 10%;
   }
-}
+} */
 
 @media only screen and (min-width: 1300px) {
   .notifications-wrapper {
