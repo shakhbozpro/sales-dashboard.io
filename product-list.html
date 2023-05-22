@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sales Dashboard</title>
+  <title>Product list</title>
   <!-- Tailwind file -->
   <link rel="stylesheet" href="./dist/output.css">
   <!-- CSS files -->
@@ -521,482 +521,265 @@
 
     <!-- ? Main start -->
     <main>
-      <section class="mt-28 md:mt-0 md:pt-28 xl:pt-8">
+      <section class="pt-24 xl:pt-8">
         <div class="handle-container">
           <div class="md:flex md:justify-between md:items-center">
-            <div class="mb-3 md:mb-0">
-              <h2
-                class="mb-1 font-bold text-[24px] leading-[110%] tracking-[-0.84px] text-[#364A63] capitalize md:mb-2 md:text-[28px]">
-                Sales
-                overview
-              </h2>
-              <p class="text-[13px] leading-[165%] text-[#8091A7] capitalize md:text-[14px]">
-                Welcome <span class="lowercase">to</span> dashLite dashboard template.
-              </p>
-            </div>
+            <h2
+              class="mb-3 font-bold text-[24px] leading-[110%] tracking-[-0.84px] text-[#364A63] md:mb-0 md:text-[28px]">
+              Products
+            </h2>
 
-            <div class="flex items-center font-bold leading-5 text-[13px] sm:gap-x-4">
-              <form>
-                <input
-                  class="calendar-input flex items-center py-2 px-[18px] text-[#526484] bg-white border-[1px] border-[#dbdfea] rounded-[4px]"
-                  type="date" name="Date" placeholder="Last 30 days">
-              </form>
+            <form class="flex flex-col gap-y-4 md:flex-row md:items-center md:gap-y-0 md:gap-x-4">
+              <input
+                class="products-search-input relative w-full py-2 px-[18px] text-[13px] leading-5 tracking-[0.26px] text-[#526484] bg-white border-[1px] border-[#DBDFEA] rounded md:w-auto"
+                type="search" name="searched" placeholder="Quick search by id">
+
+              <select
+                class="py-2 px-[18px] font-bold text-[13px] leading-[20px] tracking-[0.26px] text-[#364A63] bg-white rounded-[3px]">
+                <option selected hidden>Status</option>
+                <option value="US">Active</option>
+                <option value="CA">Inactive</option>
+              </select>
+
               <button
-                class="repost flex items-center py-2 px-[18px] tracking-[0.26px] text-white bg-[#6576FF] rounded-[3px]">Reports</button>
-            </div>
+                class="flex items-center gap-x-[13px] py-2 px-[18px] font-bold text-[13px] leading-5 tracking-[0.26px] text-white capitalize bg-[#6576FF] rounded-[3px]">
+                <img class="w-[18px] h-[18px]" src="./assets/images/plus.svg" alt="Plus icon" width="18" height="18">
+                Add product</button>
+            </form>
           </div>
         </div>
       </section>
 
-      <section class="pt-7">
+      <section class="products-list pt-7 mb-20">
         <div class="handle-container">
-          <div class="xl:flex">
-            <div class="max-w-[769px] w-full mx-auto mb-3 xl:mx-0 xl:mr-[28px] xl:mb-0">
-              <div
-                class="chart-box mb-6 pt-4 pb-0 pl-2 bg-white border-[1px] border-[#DBDFEA] rounded-[4px] sm:pt-6 sm:px-6 sm:pb-4">
-                <h3 class="mb-1 font-bold leading-[110%] tracking-[-0.168px] text-[#364A63] capitalize">Sales revenue
-                </h3>
-                <p class="mb-2 leading-[165%] text-xs text-[#8091A7] sm:mb-0">
-                  In last 30 days revenue from subscription.
-                </p>
-                <div class="md:flex md:justify-between md:items-center md:gap-x-3 2xl:gap-x-[30px]">
-                  <div class="flex items-center gap-x-4 2xl:gap-x-6">
-                    <p class="leading-[165%] text-[12px] text-[#8091A7]">
-                      <span
-                        class="flex items-center leading-[110%]   text-[#364A63] sm:text-lg md:text-xl 2xl:text-[28px]">
-                        14,299.59
-                        <span
-                          class="loss-amount flex items-center ml-1 leading-[100%] text-[14px] text-[#E85347]">16.93%</span>
-                      </span>
-                      This Month
-                    </p>
-                    <p class="leading-[165%] text-[12px] text-[#8091A7]">
-                      <span
-                        class="flex items-center leading-[110%] text-sm text-[#364A63] sm:text-lg md:text-xl xl:text-[28px]">
-                        7,299.59
-                        <span
-                          class="profit-amount flex items-center ml-1 leading-[100%] text-[14px] text-[#1EE0AC]">4.26%</span>
-                      </span>
-                      This Week
-                    </p>
-                  </div>
-                  <canvas class="mx-auto md:mx-0" id="barChart" width="260" height="65"></canvas>
-                </div>
-              </div>
+          <div class="overflow-x-scroll">
+            <table class="w-full bg-white border-[1px] border-[#DBDFEA] whitespace-nowrap">
+              <thead>
+                <tr class="text-[12.6px] leading-[21px] text-[#8091A7] border-b-[1px] border-[#DBDFEA]">
+                  <th class="font-normal py-[10px] pl-6"><img src="./assets/images/checkbox-icon.svg" alt=""></th>
+                  <th class="py-[10px] text-left">Name</th>
+                  <th class="py-[10px] text-left">SKU</th>
+                  <th class="py-[10px] text-left">Price</th>
+                  <th class="py-[10px] text-left">Stock</th>
+                  <th class="py-[10px] text-left">Category</th>
+                  <th class="py-[10px]"><img class="w-[16px] h-[16px]" src="./assets/images/start-head.svg"
+                      alt="star heading icon" width="16" height="16"></th>
+                  <th class="py-[10px]"><img class="w-[18px] h-[5px]" src="./assets/images/x-menu-btn.svg"
+                      alt="menu button" width="18" height="5">
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="pl-6"><input type="checkbox"></td>
+                  <td class="flex items-center py-4 font-bold text-[14px] leading-[23.1px] text-[#364A63] capitalize">
+                    <img class="mr-[10px]" src="./assets/images/smart-watch.png" alt="Pink smart watch" width="44"
+                      height="44">
+                    Pink fitness tracker
+                  </td>
+                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">UY3749</td>
+                  <td class="font-medium text-[12.6px] leading-[20.7px] text-[#364A63]">$ 99.49</td>
+                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">49</td>
+                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7] capitalize">Fitbit, tracker</td>
+                  <td><img class="w-[16px] h-[16px]" src="./assets/images/gold-star.svg" alt="gold star" width="16"
+                      height="16"></td>
+                  <td>
+                    <button class="w-[18px] h-[5px]"><img src="./assets/images/x-menu-btn.svg" alt="menu button"
+                        width="18" height="5"></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="pl-6"><input type="checkbox"></td>
+                  <td class="flex items-center py-4 font-bold text-[14px] leading-[23.1px] text-[#364A63] capitalize">
+                    <img class="mr-[10px]" src="./assets/images/purple-smartwatch.png" alt="Purple smartwatch"
+                      width="44" height="44">
+                    Purple smartwatchr
+                  </td>
+                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">UY3750</td>
+                  <td class="font-medium text-[12.6px] leading-[20.7px] text-[#364A63]">$ 89.49</td>
+                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">103</td>
+                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7] capitalize">Gadgets, fitbit, tracker</td>
+                  <td><img class="w-[16px] h-[16px]" src="./assets/images/gold-star.svg" alt="gold star" width="16"
+                      height="16"></td>
+                  <td>
+                    <button class="w-[18px] h-[5px]"><img src="./assets/images/x-menu-btn.svg" alt="menu button"
+                        width="18" height="5"></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="pl-6"><input type="checkbox"></td>
+                  <td class="flex items-center py-4 font-bold text-[14px] leading-[23.1px] text-[#364A63] capitalize">
+                    <img class="mr-[10px]" src="./assets/images/black-headphones.png" alt="Black headphones" width="44"
+                      height="44">
+                    Black mi band smartwatch
+                  </td>
+                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">UY3751</td>
+                  <td class="font-medium text-[12.6px] leading-[20.7px] text-[#364A63]">$ 299.49</td>
+                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">68</td>
+                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7] capitalize">Smartwatch, tracker</td>
+                  <td><img class="w-[16px] h-[16px]" src="./assets/images/gold-star.svg" alt="gold star" width="16"
+                      height="16"></td>
+                  <td>
+                    <button class="w-[18px] h-[5px]"><img src="./assets/images/x-menu-btn.svg" alt="menu button"
+                        width="18" height="5"></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="pl-6"><input type="checkbox"></td>
+                  <td class="flex items-center py-4 font-bold text-[14px] leading-[23.1px] text-[#364A63] capitalize">
+                    <img class="mr-[10px]" src="./assets/images/iphone-headphones.png" alt="iPhone 7 headphones"
+                      width="44" height="44">
+                    iPhone 7 Headphones
+                  </td>
+                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">UY3753</td>
+                  <td class="font-medium text-[12.6px] leading-[20.7px] text-[#364A63]">$ 129.49</td>
+                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">81</td>
+                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7] capitalize">Headphone, gadgets</td>
+                  <td><img class="w-[16px] h-[16px]" src="./assets/images/gold-star.svg" alt="gold star" width="16"
+                      height="16"></td>
+                  <td>
+                    <button class="w-[18px] h-[5px]"><img src="./assets/images/x-menu-btn.svg" alt="menu button"
+                        width="18" height="5"></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="pl-6"><input type="checkbox"></td>
+                  <td class="flex items-center py-4 font-bold text-[14px] leading-[23.1px] text-[#364A63] capitalize">
+                    <img class="mr-[10px]" src="./assets/images/iphone-case.png" alt="Purple blue gradient iPhone case"
+                      width="44" height="44">
+                    Purple blue gradient iPhone case
+                  </td>
+                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">UY3754</td>
+                  <td class="font-medium text-[12.6px] leading-[20.7px] text-[#364A63]">$ 29.00</td>
+                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">28</td>
+                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7] capitalize">Case, gadgets</td>
+                  <td><img class="w-[16px] h-[16px]" src="./assets/images/gold-star.svg" alt="gold star" width="16"
+                      height="16"></td>
+                  <td>
+                    <button class="w-[18px] h-[5px]"><img src="./assets/images/x-menu-btn.svg" alt="menu button"
+                        width="18" height="5"></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="pl-6"><input type="checkbox"></td>
+                  <td class="flex items-center py-4 font-bold text-[14px] leading-[23.1px] text-[#364A63] capitalize">
+                    <img class="mr-[10px]" src="./assets/images/plug-in-speaker.png" alt="Plug in speaker" width="44"
+                      height="44">
+                    Plug in speaker
+                  </td>
+                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">UY3755</td>
+                  <td class="font-medium text-[12.6px] leading-[20.7px] text-[#364A63]">$ 59.00</td>
+                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">62</td>
+                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7] capitalize">Gadgets, speaker</td>
+                  <td><img class="w-[16px] h-[16px]" src="./assets/images/gold-star.svg" alt="gold star" width="16"
+                      height="16"></td>
+                  <td>
+                    <button class="w-[18px] h-[5px]"><img src="./assets/images/x-menu-btn.svg" alt="menu button"
+                        width="18" height="5"></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="pl-6"><input type="checkbox"></td>
+                  <td class="flex items-center py-4 font-bold text-[14px] leading-[23.1px] text-[#364A63] capitalize">
+                    <img class="mr-[10px]" src="./assets/images/waterproof-speaker.png"
+                      alt="Wireless saterproof speaker" width="44" height="44">
+                    Wireless saterproof speaker
+                  </td>
+                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">UY3756</td>
+                  <td class="font-medium text-[12.6px] leading-[20.7px] text-[#364A63]">$ 35.99</td>
+                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">37</td>
+                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7] capitalize">Speaker, gadgets</td>
+                  <td><img class="w-[16px] h-[16px]" src="./assets/images/gold-star.svg" alt="gold star" width="16"
+                      height="16"></td>
+                  <td>
+                    <button class="w-[18px] h-[5px]"><img src="./assets/images/x-menu-btn.svg" alt="menu button"
+                        width="18" height="5"></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="pl-6"><input type="checkbox"></td>
+                  <td class="flex items-center py-4 font-bold text-[14px] leading-[23.1px] text-[#364A63] capitalize">
+                    <img class="mr-[10px]" src="./assets/images/fitnes-trackers.png" alt="AliExpress fitness trackers"
+                      width="44" height="44">
+                    AliExpress fitness trackers
+                  </td>
+                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">UY3758</td>
+                  <td class="font-medium text-[12.6px] leading-[20.7px] text-[#364A63]">$ 99.49</td>
+                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">73</td>
+                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7] capitalize">Men, holder</td>
+                  <td><img class="w-[16px] h-[16px]" src="./assets/images/gold-star.svg" alt="gold star" width="16"
+                      height="16"></td>
+                  <td>
+                    <button class="w-[18px] h-[5px]"><img src="./assets/images/x-menu-btn.svg" alt="menu button"
+                        width="18" height="5"></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div
+            class="w-full px-4 py-[22px] bg-white border-[1px] border-[#DBDFEA] rounded-br rounded-bl md:flex md:items-center md:justify-between md:px-6">
+            <nav>
+              <ul class="inline-flex items-center -space-x-px">
+                <li class="border-[0.5px] border-[#DBDFEA] rounded-l-md">
+                  <a href="#" class="block px-3 py-2 ml-0 hover:bg-[#F5F6FA]">
+                    <span class="sr-only">Previous</span>
+                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                  </a>
+                </li>
+                <li class="border-[1px] border-[#DBDFEA]">
+                  <a href="#" class="block px-3 py-2 bg-[#F5F6FA] hover:bg-[#F5F6FA]">1</a>
+                </li>
+                <li class="border-[1px] border-[#DBDFEA]">
+                  <a href="#" class="block px-3 py-2 hover:bg-[#F5F6FA]">2</a>
+                </li>
+                <li class="border-[1px] border-[#DBDFEA]">
+                  <a href="#" aria-current="page" class="z-10 block px-3 py-2 hover:bg-[#F5F6FA]">3</a>
+                </li>
+                <li class="border-[1px] border-[#DBDFEA]">
+                  <a href="#" class="block px-3 py-2 hover:bg-[#F5F6FA]">4</a>
+                </li>
+                <li class="border-[1px] border-[#DBDFEA]">
+                  <a href="#" class="block px-3 py-2 hover:bg-[#F5F6FA]">5</a>
+                </li>
+                <li class="border-[1px] border-[#DBDFEA] rounded-r-md">
+                  <a href="#" class="block px-3 py-2 hover:bg-[#F5F6FA]">
+                    <span class="sr-only">Next</span>
+                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </nav>
 
-              <div class="md:flex md:justify-between md:items-stretch md:gap-x-6">
-                <div
-                  class="chart-box mb-3 pt-4 pl-2 bg-white border-[1px] border-[#DBDFEA] rounded-[4px] md:mb-0 md:pt-6 md:pr-3 md:pl-6">
-                  <h3 class="font-bold leading-[110%] tracking-[-0.168px] capitalize text-[#364A63]">Active
-                    subscriptions</h3>
-                  <div class="flex justify-between items-center">
-                    <p class="leading-[165%] text-[12px] text-[#364A63] md:mr-[40px]">
-                      <span
-                        class="flex items-center leading-[110%] text-sm text-[#364A63] sm:text-lg md:text-xl lg:text-[28px]">
-                        9.69
-                        <span>K</span>
-                      </span>
-                      <span class="flex items-center text-[#8091A7]">
-                        <span class="loss-amount flex items-center mr-2 leading-3 text-xs text-[#E85347]">1.93%</span>
-                        since last month
-                      </span>
-                    </p>
-                    <canvas id="barChart2" width="128" height="73"></canvas>
-                  </div>
-                </div>
-
-                <div
-                  class="chart-box pt-4 pl-2 bg-white border-[1px] border-[#DBDFEA] rounded-[4px] md:pt-6 md:pr-3 md:pl-6">
-                  <h3 class="font-bold leading-[110%] tracking-[-0.168px] capitalize text-[#364A63]">Avg subscriptions
-                  </h3>
-                  <div class="flex justify-between items-center">
-                    <p class="leading-[165%] text-[12px] text-[#364A63] md:mr-[40px]">
-                      <span
-                        class="flex items-center leading-[110%] text-sm text-[#364A63] sm:text-lg md:text-xl lg:text-[28px]">346.2</span>
-                      <span class="flex items-center text-[#8091A7]">
-                        <span class="profit-amount flex items-center mr-2 leading-3 text-xs text-[#1EE0AC]">2.45%</span>
-                        since last week
-                      </span>
-                    </p>
-                    <canvas id="barChart3" width="128" height="73"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="chart-box max-w-[769px] w-full mx-auto pt-4 pb-0 pl-2 bg-white border-[1px] border-[#DBDFEA] rounded-[4px] md:pt-6 md:px-6 lg:mx-0">
-              <h3 class="mb-1 font-bold leading-[110%] tracking-[-0.168px] text-[#364A63] capitalize">Sales overview
-              </h3>
-              <p class="mb-2 text-xs leading-[165%] text-[#8091A7]">
-                In 30 days sales of product subscription.
-                <a class="capitalize text-[#6576FF]" href="#">See details</a>
-              </p>
-              <div class="flex justify-between items-center mb-2">
-                <span class="leading-[110%] text-[#364A63] text-lg md:text-xl lg:text-[28px]">$82,944.60</span>
-                <span class="mr-2 text-[14px] leading-[165%] text-[#8091A7] md:mr-0 md:text-lg">
-                  1,937
-                  <span class="text-[13px]">Subscribers</span>
-                </span>
-              </div>
-              <canvas id="myChart" class="max-w-[730px] max-h-[170px] mr-0"></canvas>
+            <div class="flex items-center gap-x-4 text-[13px] leading-[21px] uppercase text-[#526484]">
+              <span>Page</span>
+              <select class="block w-[59px] p-2.5 text-sm bg-gray-50 border border-gray-300 rounded-lg">
+                <option selected value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+              <span>Of 102</span>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section class="pt-7">
-        <div class="handle-container">
-          <div class="lg:flex lg:justify-between lg:gap-x-3 xl:gap-x-7">
-            <div
-              class="max-w-[1035px] w-full mx-auto mb-3 bg-white border-[1px] border-[#DBDFEA] rounded-[4px] overflow-x-auto lg:mx-0 lg:mb-0">
-              <div class="flex justify-between items-center p-6">
-                <div class="flex items-center">
-                  <h3 class="mr-3 font-bold tracking-[-0.168px]">Transaction</h3>
-                  <button
-                    class="font-medium text-[13px] leading-[100%] tracking-[-0.16px] capitalize text-[#6576FF]">See
-                    history</button>
-                </div>
-                <ul class="flex items-center gap-x-5 text-[14px]">
-                  <li>
-                    <button class="text-[#8091A7]">Paid</button>
-                  </li>
-                  <li>
-                    <button class="text-[#8091A7]">Pending</button>
-                  </li>
-                  <li>
-                    <button class="text-[#8091A7]">All</button>
-                  </li>
-                </ul>
-              </div>
-
-              <table class="w-full">
-                <tr class="text-[12.6px] leading-[21px] text-[#8091A7] border-[1px] border-[#DBDFEA]">
-                  <th class="py-2 px-3 text-left capitalize md:px-6">Order no.</th>
-                  <th class="py-2 px-3 text-left capitalize md:px-6">Customer</th>
-                  <th class="py-2 px-3 text-left capitalize md:px-6">Date</th>
-                  <th class="py-2 px-3 text-left capitalize md:px-6">Ref</th>
-                  <th class="py-2 px-3 text-left capitalize md:px-6">Amount</th>
-                  <th class="py-2 px-3 text-left capitalize md:px-6">Status</th>
-                  <th></th>
-                </tr>
-                <tr class="font-medium leading-[165%] border-[1px] border-[#DBDFEA]">
-                  <td class="py-2 px-2 text-[14px] text-[#6576FF] md:py-[16px] md:px-6">#95954</td>
-                  <td class="flex items-center gap-x-3 py-2 px-2 text-xs text-[#364A63] md:py-[16px] md:px-6">
-                    <span
-                      class="py-[8.5px] px-[11px] font-medium text-[14px] leading-[165%] uppercase text-white bg-[#6576FF] rounded-full">Ab</span>
-                    Abu Bin Ishtiyak
-                  </td>
-                  <td class="py-2 px-2 text-xs text-[#8091A7] md:py-[16px] md:px-6">02/11/2020</td>
-                  <td class="py-2 px-2 text-xs text-[#6576FF] md:py-[16px] md:px-6">SUB-2309232</td>
-                  <td class="py-2 px-2 text-xs text-[#364A63] md:py-[16px] md:px-6">4,596.75 USD</td>
-                  <td class="transaction-status flex items-center py-2 px-2 text-xs md:py-[16px] md:px-6">Paid</td>
-                  <td class="py-4 px-2 cursor-pointer md:py-6 md:px-4">
-                    <button class="tabel-data-btn"> </button>
-                  </td>
-                </tr>
-                <tr class="font-medium leading-[165%] border-[1px] border-[#DBDFEA]">
-                  <td class="py-2 px-2 text-[14px] text-[#6576FF] md:py-[16px] md:px-6">#95850</td>
-                  <td
-                    class="flex items-center gap-x-3 py-2 px-2 text-xs text-[#364A63] leading-[165%] md:py-[16px] md:px-6">
-                    <span
-                      class="py-[8.5px] px-[11px] font-medium text-[14px] leading-[165%] uppercase text-white bg-[#1676FB] rounded-full">De</span>
-                    Desiree Edwards
-                  </td>
-                  <td class="py-2 px-2 text-xs text-[#8091A7] md:py-[16px] md:px-6">02/02/2020</td>
-                  <td class="py-2 px-2 text-xs text-[#6576FF] md:py-[16px] md:px-6">SUB-2309154</td>
-                  <td class="py-2 px-2 text-xs text-[#364A63] md:py-[16px] md:px-6">196.75 USD</td>
-                  <td class="transaction-status flex items-center py-2 px-2 text-xs md:py-[16px] md:px-6">Canceled</td>
-                  <td class="py-4 px-2 cursor-pointer md:py-6 md:px-4">
-                    <button class="tabel-data-btn"> </button>
-                  </td>
-                </tr>
-                <tr class="font-medium leading-[165%] border-[1px] border-[#DBDFEA]">
-                  <td class="py-2 px-2 text-[14px] text-[#6576FF] md:py-[16px] md:px-6">#95812</td>
-                  <td class="flex items-center gap-x-3 py-2 px-2 text-xs text-[#364A63] md:py-[16px] md:px-6">
-                    <img class="rounded-full" src="./assets/images/blanca-schultz.png" alt="Blanca Schultz" width="40"
-                      height="40">
-                    Blanca Schultz
-                  </td>
-                  <td class="py-2 px-2 text-xs text-[#8091A7] md:py-[16px] md:px-6">02/01/2020</td>
-                  <td class="py-2 px-2 text-xs text-[#6576FF] md:py-[16px] md:px-6">SUB-2309143</td>
-                  <td class="py-2 px-2 text-xs text-[#364A63] md:py-[16px] md:px-6">199.99 USD</td>
-                  <td class="transaction-status flex items-center py-2 px-2 text-xs md:py-[16px] md:px-6">Paid</td>
-                  <td class="py-4 px-2 cursor-pointer md:py-6 md:px-4">
-                    <button class="tabel-data-btn"> </button>
-                  </td>
-                </tr>
-                <tr class="font-medium leading-[165%] border-[1px] border-[#DBDFEA]">
-                  <td class="py-2 px-2 text-[14px] text-[#6576FF] md:py-[16px] md:px-6">#95256</td>
-                  <td class="flex items-center gap-x-3 py-2 px-2 text-xs text-[#364A63] md:py-[16px] md:px-6">
-                    <span
-                      class="py-[8.5px] px-[11px] font-medium text-[14px] leading-[165%] uppercase text-white bg-[#1676FB] rounded-full">Nl</span>
-                    Naomi Lawrence
-                  </td>
-                  <td class="py-2 px-2 text-xs text-[#8091A7] md:py-[16px] md:px-6">01/29/2020</td>
-                  <td class="py-2 px-2 text-xs text-[#6576FF] md:py-[16px] md:px-6">SUB-2309864</td>
-                  <td class="py-2 px-2 text-xs text-[#364A63] md:py-[16px] md:px-6">1,099.99 USD</td>
-                  <td class="transaction-status flex items-center py-2 px-2 text-xs md:py-[16px] md:px-6">Paid</td>
-                  <td class="py-4 px-2 cursor-pointer md:py-6 md:px-4">
-                    <button class="tabel-data-btn"> </button>
-                  </td>
-                </tr>
-                <tr class="font-medium leading-[165%] border-[1px] border-[#DBDFEA]">
-                  <td class="py-2 px-2 text-[14px] text-[#6576FF] md:py-[16px] md:px-6">#95135</td>
-                  <td class="flex items-center gap-x-3 py-2 px-2 text-xs text-[#364A63] md:py-[16px] md:px-6">
-                    <span
-                      class="py-[8.5px] px-[11px] font-medium text-[14px] leading-[165%] uppercase text-white bg-[#1676FB] rounded-full">Ch</span>
-                    Cassandra Hogan
-                  </td>
-                  <td class="py-2 px-2 text-xs text-[#8091A7] md:py-[16px] md:px-6">02/29/2020</td>
-                  <td class="py-2 px-2 text-xs text-[#6576FF] md:py-[16px] md:px-6">SUB-2309564</td>
-                  <td class="py-2 px-2 text-xs text-[#364A63] md:py-[16px] md:px-6">2,596.00 USD</td>
-                  <td class="transaction-status flex items-center py-2 px-2 text-xs md:py-[16px] md:px-6">Paid</td>
-                  <td class="py-4 px-2 cursor-pointer md:py-6 md:px-4">
-                    <button class="tabel-data-btn"></button>
-                  </td>
-                </tr>
-              </table>
-            </div>
-
-            <div class="max-w-[503px] w-full mx-auto bg-white border-[1px] border-[#DBDFEA] rounded-[4px] lg:mx-0">
-              <div class="flex justify-between items-center p-4 md:p-6">
-                <h3 class="font-bold leading-[110%] tracking-[-0.168px] capitalize">Recent activities</h3>
-                <ul class="flex items-center gap-x-3 text-[14px] leading-[100%] text-[#8091A7] md:gap-x-5">
-                  <li>
-                    <button>Cancel</button>
-                  </li>
-                  <li>
-                    <button>All</button>
-                  </li>
-                </ul>
-              </div>
-              <ul>
-                <li class="flex items-center gap-x-3 py-3 px-4 border-t-[1px] border-[#DBDFEA] md:py-[16px] md:px-6">
-                  <img src="./assets/images/keith-jensen.png" alt="Keith Jensen" width="40" height="40">
-                  <div>
-                    <p class="text-[13px] leading-[23px] text-[#526484] md:text-[14px]">Keith Jensen requested to
-                      Withdrawal.</p>
-                    <span class="text-xs leading-[19.8px] text-[#8091A7]">2 hours ago</span>
-                  </div>
-                </li>
-                <li class="flex items-center gap-x-3 py-3 px-4 border-t-[1px] border-[#DBDFEA] md:py-[16px] md:px-6">
-                  <span
-                    class="pt-[11px] px-[11px] pb-3 font-semibold text-[13px] leading-[17px] uppercase text-[#FFFFFF] bg-[#F4BD0E] rounded-full">Hs</span>
-                  <div>
-                    <p class="text-[13px] leading-[23px] text-[#526484] md:text-[14px]">Harry Simpson placed a Order.
-                    </p>
-                    <span class="text-xs leading-[19.8px] text-[#8091A7]">1 hours ago</span>
-                  </div>
-                </li>
-                <li class="flex items-center gap-x-3 py-3 px-4 border-t-[1px] border-[#DBDFEA] md:py-[16px] md:px-6">
-                  <span
-                    class="pt-3 px-[10px] pb-[11px] font-semibold text-[13px] leading-[16.6px] uppercase text-[#FFFFFF] bg-[#1676FB] rounded-full">Sm</span>
-                  <div>
-                    <p class="text-[13px] leading-[23px] text-[#526484] md:text-[14px]">Stephanie Marshall got a huge
-                      bonus.</p>
-                    <span class="text-xs leading-[19.8px] text-[#8091A7]">1 hours ago</span>
-                  </div>
-                </li>
-                <li class="flex items-center gap-x-3 py-3 px-4 border-t-[1px] border-[#DBDFEA] md:py-[16px] md:px-6">
-                  <img src="./assets/images/timothy-moreno.png" alt="Timothy Moreno" width="40" height="40">
-                  <div>
-                    <p class="text-[13px] leading-[23px] text-[#526484] md:text-[14px]">Timothy Moreno placed a Order.
-                    </p>
-                    <span class="text-xs leading-[19.8px] text-[#8091A7]">2 hours ago</span>
-                  </div>
-                </li>
-                <li class="flex items-center gap-x-3 py-3 px-4 border-t-[1px] border-[#DBDFEA] md:py-[16px] md:px-6">
-                  <span
-                    class="pt-[11px] pr-[10px] pb-3 pl-3 font-semibold text-[13px] leading-[16.6px] uppercase text-[#FFFFFF] bg-[#FF63A5] rounded-full">Nc</span>
-                  <div>
-                    <p class="text-[13px] leading-[23px] text-[#526484] md:text-[14px]">Nicholas Carr deposited funds.
-                    </p>
-                    <span class="text-xs leading-[19.8px] text-[#8091A7]">4 hours ago</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="mb-[122px] pt-7">
-        <div class="handle-container">
-          <ul class="lg:flex lg:justify-between lg:items-stretch">
-            <li
-              class="max-w-[503px] w-full mb-3 mx-auto bg-white border-[1px] border-[#DBDFEA] rounded-[4px] lg:mb-0 lg:mx-0">
-              <div class="flex justify-between items-center p-4 md:p-6">
-                <h3 class="font-bold leading-[17.6px] tracking-[-0.168px] capitalize">New users</h3>
-                <a class="font-medium text-[13px] leading-[13px] tracking-[-0.16px] capitalize text-[#6576FF]"
-                  href="#">View all</a>
-              </div>
-              <ul>
-                <li
-                  class="flex justify-between items-center p-3 border-t-[1px] border-[#DBDFEA] md:py-[14.5px] md:px-6">
-                  <div class="flex items-center gap-4">
-                    <span
-                      class="py-[8.5px] px-[10.5px] font-medium text-[14px] leading-[160%] uppercase text-[#6576FF] bg-[#EBEDFF] rounded-full">Ab</span>
-                    <div>
-                      <p class="font-bold text-[14px] leading-[165%] capitalize text-[#364A63]">Abu bin ishtiyak</p>
-                      <p class="text-xs leading-[165%] text-[#526484]">info@softnio.com</p>
-                    </div>
-                  </div>
-                  <button class="new-users-menu-btn w-[19px] h-[21px]"></button>
-                </li>
-
-                <li
-                  class="flex justify-between items-center p-3 border-t-[1px] border-[#DBDFEA] md:py-[14.5px] md:px-6">
-                  <div class="flex items-center gap-4">
-                    <span
-                      class="py-[8.5px] px-[9.5px] font-medium text-[14px] leading-[160%] uppercase text-[#FF63A5] bg-[#FFEBF3] rounded-full">Sw</span>
-                    <div>
-                      <p class="font-bold text-[14px] leading-[165%] capitalize text-[#364A63]">Sharon walker</p>
-                      <p class="text-xs leading-[165%] text-[#526484]">sharon-90@example.com</p>
-                    </div>
-                  </div>
-                  <button class="new-users-menu-btn w-[19px] h-[21px]"></button>
-                </li>
-
-                <li
-                  class="flex justify-between items-center p-3 border-t-[1px] border-[#DBDFEA] md:py-[14.5px] md:px-6">
-                  <div class="flex items-center gap-4">
-                    <span
-                      class="py-[8.5px] px-[10px] font-medium text-[14px] leading-[160%] uppercase text-[#F4BD0E] bg-[#FEF6E0] rounded-full">Go</span>
-                    <div>
-                      <p class="font-bold text-[14px] leading-[165%] capitalize text-[#364A63]">Gloria oliver</p>
-                      <p class="text-xs leading-[165%] text-[#526484]">gloria_72@example.com</p>
-                    </div>
-                  </div>
-                  <button class="new-users-menu-btn w-[19px] h-[21px]"></button>
-                </li>
-
-                <li
-                  class="flex justify-between items-center p-3 border-t-[1px] border-[#DBDFEA] md:py-[14.5px] md:px-6">
-                  <div class="flex items-center gap-4">
-                    <span
-                      class="py-[8.5px] px-[10px] font-medium text-[14px] leading-[160%] uppercase text-[#F4BD0E] bg-[#FEF6E0] rounded-full">Ps</span>
-                    <div>
-                      <p class="font-bold text-[14px] leading-[165%] capitalize text-[#364A63]">Phillip sullivan</p>
-                      <p class="text-xs leading-[165%] text-[#526484]">phillip-85@example.com</p>
-                    </div>
-                  </div>
-                  <button class="new-users-menu-btn w-[19px] h-[21px]"></button>
-                </li>
-              </ul>
-            </li>
-
-            <li
-              class="max-w-[503px] w-full mb-3 mx-auto bg-white border-[1px] border-[#DBDFEA] rounded-[4px] lg:mb-0 lg:mx-0">
-              <div class="flex justify-between items-center p-4 md:p-6">
-                <h3 class="font-bold leading-[17.6px] tracking-[-0.168px] capitalize">Support requests</h3>
-                <a class="font-medium text-[13px] leading-[13px] tracking-[-0.16px] capitalize text-[#6576FF]"
-                  href="#">All Tickets</a>
-              </div>
-              <ul>
-                <li
-                  class="flex justify-between items-center p-3 border-t-[1px] border-[#DBDFEA] md:py-[14.5px] md:px-6">
-                  <div class="flex items-center gap-4">
-                    <img src="./assets/images/blanca-schultz.png" alt="Vincent Lopez" width="40" height="40">
-                    <div>
-                      <p class="font-bold text-[14px] leading-[165%] capitalize text-[#364A63]">Vincent lopez</p>
-                      <p class="text-[14px] leading-[165%] text-[#526484]">Thanks for contact us with your issues...</p>
-                      <span class="text-xs leading-[165%] text-[#8091A7]">6 min ago</span>
-                    </div>
-                  </div>
-                  <span
-                    class="support-request-text flex items-center font-medium text-xs leading-[18px] tracking-[0.12px]">Pending</span>
-                </li>
-
-                <li
-                  class="flex justify-between items-center p-3 border-t-[1px] border-[#DBDFEA] md:py-[14.5px] md:px-6">
-                  <div class="flex items-center gap-4">
-                    <span
-                      class="py-[8.5px] px-[9px] font-medium text-[14px] leading-[160%] uppercase text-[#6576FF] bg-[#EBEDFF] rounded-full">Dm</span>
-                    <div>
-                      <p class="font-bold text-[14px] leading-[165%] capitalize text-[#364A63]">Daniel moore</p>
-                      <p class="text-[14px] leading-[165%] text-[#526484]">Thanks for contact us with your issues...</p>
-                      <span class="text-xs leading-[165%] text-[#8091A7]">2 hours ago</span>
-                    </div>
-                  </div>
-                  <span
-                    class="support-request-text flex items-center font-medium text-xs leading-[18px] tracking-[0.12px]">Open</span>
-                </li>
-
-                <li
-                  class="flex justify-between items-center p-3 border-t-[1px] border-[#DBDFEA] md:py-[14.5px] md:px-6">
-                  <div class="flex items-center gap-4">
-                    <img src="./assets/images/blanca-schultz.png" alt="Larry Henry" width="40" height="40">
-                    <div>
-                      <p class="font-bold text-[14px] leading-[165%] capitalize text-[#364A63]">Larry henry</p>
-                      <p class="text-[14px] leading-[165%] text-[#526484]">Thanks for contact us with your issues...</p>
-                      <span class="text-xs leading-[165%] text-[#8091A7]">3 hours ago</span>
-                    </div>
-                  </div>
-                  <span
-                    class="support-request-text flex items-center font-medium text-xs leading-[18px] tracking-[0.12px]">Solved</span>
-                </li>
-              </ul>
-            </li>
-
-            <li
-              class="max-w-[503px] w-full mb-3 mx-auto bg-white border-[1px] border-[#DBDFEA] rounded-[4px] lg:mb-0 lg:mx-0">
-              <div class="flex justify-between items-center p-4 border-b-[1px] border-[#DBDFEA] md:p-6">
-                <h3 class="font-bold leading-[17.6px] tracking-[-0.168px] capitalize">Notifications</h3>
-                <a class="font-medium text-[13px] leading-[13px] tracking-[-0.16px] capitalize text-[#6576FF]"
-                  href="#">View all</a>
-              </div>
-              <p class="mt-4 mb-2 px-4 font-bold text-[14px] leading-[165%] text-[#8091A7] md:mt-6 md:mb-4 md:px-6">
-                November, 2019</p>
-              <ul>
-                <li class="notifications-item flex gap-[10px] px-4 pb-3 md:px-6 md:pb-5">
-                  <span class="notifications-date text-[14px] leading-[165%] capitalize text-[#8091A7]">13 nov</span>
-                  <div>
-                    <h4 class="mb-[6px] font-bold leading-[110%] tracking-[-0.168px] capitalize md:mb-[10px]">Submited
-                      KYC
-                      application</h4>
-                    <p class="text-xs leading-[165%] text-[#526484] whitespace-nowrap sm:text-[14px]">Re-submitted KYC
-                      Application
-                      form.</p>
-                    <span class="text-xs leading-[165%] text-[#8091A7]">09:30am</span>
-                  </div>
-                </li>
-
-                <li class="notifications-item flex gap-[10px] px-4 pb-3 md:px-6 md:pb-5">
-                  <span class="notifications-date text-[14px] leading-[165%] capitalize text-[#8091A7]">13 nov</span>
-                  <div>
-                    <h4 class="mb-[6px] font-bold leading-[110%] tracking-[-0.168px] capitalize md:mb-[10px]">Submited
-                      KYC
-                      application</h4>
-                    <p class="text-xs leading-[165%] text-[#526484] whitespace-nowrap sm:text-[14px]">Re-submitted KYC
-                      Application
-                      form.</p>
-                    <span class="text-xs leading-[165%] text-[#8091A7]">09:30am</span>
-                  </div>
-                </li>
-
-                <li class="notifications-item flex gap-[10px] px-4 pb-3 md:px-6 md:pb-5">
-                  <span class="notifications-date text-[14px] leading-[165%] capitalize text-[#8091A7]">13 nov</span>
-                  <div>
-                    <h4 class="mb-[6px] font-bold leading-[110%] tracking-[-0.168px] capitalize md:mb-[10px]">Submited
-                      KYC
-                      application</h4>
-                    <p class="text-xs leading-[165%] text-[#526484] whitespace-nowrap sm:text-[14px]">Re-submitted KYC
-                      Application
-                      form.</p>
-                    <span class="text-xs leading-[165%] text-[#8091A7]">09:30am</span>
-                  </div>
-                </li>
-              </ul>
-            </li>
-          </ul>
         </div>
       </section>
     </main>
     <!-- ? Main end -->
 
     <!-- ? Footer start -->
-    <footer class="py-4 bg-white border-t-[1px] border-[#DBDFEA] md:py-[21px]">
+    <footer class=" py-4 bg-white border-t-[1px] border-[#DBDFEA] md:py-[21px]">
       <div class="handle-container">
         <div class="flex justify-between items-center">
           <p class="text-xs leading-[21px] capitalize text-[#8091A7] md:text-[13px]">
