@@ -339,7 +339,7 @@
                 <img src="./assets/images/notification.svg" alt="Notification" width="24" height="26">
               </button>
               <div
-                class="notifications-wrapper hidden absolute top-[65px] z-10 max-w-[320px] w-full max-h-[330px] h-full bg-white rounded-[6px] border-[1px] border-[#d8d8d8] overflow-y-auto lg:right-[19%]">
+                class="notifications-wrapper hidden absolute top-[65px] z-10 max-w-[320px] w-full max-h-[330px] h-auto bg-white rounded-[6px] border-[1px] border-[#d8d8d8] overflow-y-auto lg:right-[19%]">
                 <div
                   class="flex items-center justify-between p-3 font-medium leading-5 tracking-[0.20px] text-[#576371]">
                   Notification
@@ -531,7 +531,7 @@
 
             <form class="flex flex-col gap-y-4 md:flex-row md:items-center md:gap-y-0 md:gap-x-4">
               <input
-                class="products-search-input relative w-full py-2 px-[18px] text-[13px] leading-5 tracking-[0.26px] text-[#526484] bg-white border-[1px] border-[#DBDFEA] rounded md:w-auto"
+                class="products-search-input w-full py-2 px-[18px] text-[13px] leading-5 tracking-[0.26px] text-[#526484] bg-white border-[1px] border-[#DBDFEA] rounded md:w-auto"
                 type="search" name="searched" placeholder="Quick search by id">
 
               <select
@@ -560,7 +560,7 @@
                   <th class="py-[10px] text-left">Name</th>
                   <th class="py-[10px] text-left">SKU</th>
                   <th class="py-[10px] text-left">Price</th>
-                  <th class="py-[10px] text-left">Stock</th>
+                  <th class="px-4 py-[10px] text-left">Stock</th>
                   <th class="py-[10px] text-left">Category</th>
                   <th class="py-[10px]"><img class="w-[16px] h-[16px]" src="./assets/images/start-head.svg"
                       alt="star heading icon" width="16" height="16"></th>
@@ -572,14 +572,15 @@
               <tbody>
                 <tr>
                   <td class="pl-6"><input type="checkbox"></td>
-                  <td class="flex items-center py-4 font-bold text-[14px] leading-[23.1px] text-[#364A63] capitalize">
+                  <td
+                    class="min-w-[192px] flex items-center py-4 font-bold text-[14px] leading-[23.1px] text-[#364A63] capitalize whitespace-normal">
                     <img class="mr-[10px]" src="./assets/images/smart-watch.png" alt="Pink smart watch" width="44"
                       height="44">
                     Pink fitness tracker
                   </td>
-                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">UY3749</td>
+                  <td class="min-w-[55px] text-[12.6px] leading-[20.7px] text-[#8091A7]">UY3749</td>
                   <td class="font-medium text-[12.6px] leading-[20.7px] text-[#364A63]">$ 99.49</td>
-                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">49</td>
+                  <td class="px-4 text-[12.6px] leading-[20.7px] text-[#8091A7]">49</td>
                   <td class="text-[12.6px] leading-[20.7px] text-[#8091A7] capitalize">Fitbit, tracker</td>
                   <td><img class="w-[16px] h-[16px]" src="./assets/images/gold-star.svg" alt="gold star" width="16"
                       height="16"></td>
@@ -590,14 +591,15 @@
                 </tr>
                 <tr>
                   <td class="pl-6"><input type="checkbox"></td>
-                  <td class="flex items-center py-4 font-bold text-[14px] leading-[23.1px] text-[#364A63] capitalize">
+                  <td
+                    class="min-w-[192px] flex items-center py-4 font-bold text-[14px] leading-[23.1px] text-[#364A63] capitalize whitespace-normal">
                     <img class="mr-[10px]" src="./assets/images/purple-smartwatch.png" alt="Purple smartwatch"
                       width="44" height="44">
                     Purple smartwatchr
                   </td>
-                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">UY3750</td>
+                  <td class="min-w-[55px] text-[12.6px] leading-[20.7px] text-[#8091A7]">UY3750</td>
                   <td class="font-medium text-[12.6px] leading-[20.7px] text-[#364A63]">$ 89.49</td>
-                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">103</td>
+                  <td class="px-4 text-[12.6px] leading-[20.7px] text-[#8091A7]">103</td>
                   <td class="text-[12.6px] leading-[20.7px] text-[#8091A7] capitalize">Gadgets, fitbit, tracker</td>
                   <td><img class="w-[16px] h-[16px]" src="./assets/images/gold-star.svg" alt="gold star" width="16"
                       height="16"></td>
@@ -608,14 +610,15 @@
                 </tr>
                 <tr>
                   <td class="pl-6"><input type="checkbox"></td>
-                  <td class="flex items-center py-4 font-bold text-[14px] leading-[23.1px] text-[#364A63] capitalize">
+                  <td
+                    class="min-w-[192px] flex items-center py-4 font-bold text-[14px] leading-[23.1px] text-[#364A63] capitalize whitespace-normal">
                     <img class="mr-[10px]" src="./assets/images/black-headphones.png" alt="Black headphones" width="44"
                       height="44">
                     Black mi band smartwatch
                   </td>
-                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">UY3751</td>
+                  <td class="min-w-[55px] text-[12.6px] leading-[20.7px] text-[#8091A7]">UY3751</td>
                   <td class="font-medium text-[12.6px] leading-[20.7px] text-[#364A63]">$ 299.49</td>
-                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">68</td>
+                  <td class="px-4 text-[12.6px] leading-[20.7px] text-[#8091A7]">68</td>
                   <td class="text-[12.6px] leading-[20.7px] text-[#8091A7] capitalize">Smartwatch, tracker</td>
                   <td><img class="w-[16px] h-[16px]" src="./assets/images/gold-star.svg" alt="gold star" width="16"
                       height="16"></td>
@@ -626,14 +629,15 @@
                 </tr>
                 <tr>
                   <td class="pl-6"><input type="checkbox"></td>
-                  <td class="flex items-center py-4 font-bold text-[14px] leading-[23.1px] text-[#364A63] capitalize">
+                  <td
+                    class="min-w-[192px] flex items-center py-4 font-bold text-[14px] leading-[23.1px] text-[#364A63] capitalize whitespace-normal">
                     <img class="mr-[10px]" src="./assets/images/iphone-headphones.png" alt="iPhone 7 headphones"
                       width="44" height="44">
                     iPhone 7 Headphones
                   </td>
-                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">UY3753</td>
+                  <td class="min-w-[55px] text-[12.6px] leading-[20.7px] text-[#8091A7]">UY3753</td>
                   <td class="font-medium text-[12.6px] leading-[20.7px] text-[#364A63]">$ 129.49</td>
-                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">81</td>
+                  <td class="px-4 text-[12.6px] leading-[20.7px] text-[#8091A7]">81</td>
                   <td class="text-[12.6px] leading-[20.7px] text-[#8091A7] capitalize">Headphone, gadgets</td>
                   <td><img class="w-[16px] h-[16px]" src="./assets/images/gold-star.svg" alt="gold star" width="16"
                       height="16"></td>
@@ -644,14 +648,15 @@
                 </tr>
                 <tr>
                   <td class="pl-6"><input type="checkbox"></td>
-                  <td class="flex items-center py-4 font-bold text-[14px] leading-[23.1px] text-[#364A63] capitalize">
+                  <td
+                    class="min-w-[192px] flex items-center py-4 font-bold text-[14px] leading-[23.1px] text-[#364A63] capitalize whitespace-normal">
                     <img class="mr-[10px]" src="./assets/images/iphone-case.png" alt="Purple blue gradient iPhone case"
                       width="44" height="44">
                     Purple blue gradient iPhone case
                   </td>
-                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">UY3754</td>
+                  <td class="min-w-[55px] text-[12.6px] leading-[20.7px] text-[#8091A7]">UY3754</td>
                   <td class="font-medium text-[12.6px] leading-[20.7px] text-[#364A63]">$ 29.00</td>
-                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">28</td>
+                  <td class="px-4 text-[12.6px] leading-[20.7px] text-[#8091A7]">28</td>
                   <td class="text-[12.6px] leading-[20.7px] text-[#8091A7] capitalize">Case, gadgets</td>
                   <td><img class="w-[16px] h-[16px]" src="./assets/images/gold-star.svg" alt="gold star" width="16"
                       height="16"></td>
@@ -662,14 +667,15 @@
                 </tr>
                 <tr>
                   <td class="pl-6"><input type="checkbox"></td>
-                  <td class="flex items-center py-4 font-bold text-[14px] leading-[23.1px] text-[#364A63] capitalize">
+                  <td
+                    class="min-w-[192px] flex items-center py-4 font-bold text-[14px] leading-[23.1px] text-[#364A63] capitalize">
                     <img class="mr-[10px]" src="./assets/images/plug-in-speaker.png" alt="Plug in speaker" width="44"
                       height="44">
                     Plug in speaker
                   </td>
-                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">UY3755</td>
+                  <td class="min-w-[55px] text-[12.6px] leading-[20.7px] text-[#8091A7]">UY3755</td>
                   <td class="font-medium text-[12.6px] leading-[20.7px] text-[#364A63]">$ 59.00</td>
-                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">62</td>
+                  <td class="px-4 text-[12.6px] leading-[20.7px] text-[#8091A7]">62</td>
                   <td class="text-[12.6px] leading-[20.7px] text-[#8091A7] capitalize">Gadgets, speaker</td>
                   <td><img class="w-[16px] h-[16px]" src="./assets/images/gold-star.svg" alt="gold star" width="16"
                       height="16"></td>
@@ -680,14 +686,15 @@
                 </tr>
                 <tr>
                   <td class="pl-6"><input type="checkbox"></td>
-                  <td class="flex items-center py-4 font-bold text-[14px] leading-[23.1px] text-[#364A63] capitalize">
+                  <td
+                    class="min-w-[192px] flex items-center py-4 font-bold text-[14px] leading-[23.1px] text-[#364A63] capitalize whitespace-normal">
                     <img class="mr-[10px]" src="./assets/images/waterproof-speaker.png"
                       alt="Wireless saterproof speaker" width="44" height="44">
                     Wireless saterproof speaker
                   </td>
-                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">UY3756</td>
+                  <td class="min-w-[55px] text-[12.6px] leading-[20.7px] text-[#8091A7]">UY3756</td>
                   <td class="font-medium text-[12.6px] leading-[20.7px] text-[#364A63]">$ 35.99</td>
-                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">37</td>
+                  <td class="px-4 text-[12.6px] leading-[20.7px] text-[#8091A7]">37</td>
                   <td class="text-[12.6px] leading-[20.7px] text-[#8091A7] capitalize">Speaker, gadgets</td>
                   <td><img class="w-[16px] h-[16px]" src="./assets/images/gold-star.svg" alt="gold star" width="16"
                       height="16"></td>
@@ -698,14 +705,15 @@
                 </tr>
                 <tr>
                   <td class="pl-6"><input type="checkbox"></td>
-                  <td class="flex items-center py-4 font-bold text-[14px] leading-[23.1px] text-[#364A63] capitalize">
+                  <td
+                    class="min-w-[192px] flex items-center py-4 font-bold text-[14px] leading-[23.1px] text-[#364A63] capitalize whitespace-normal">
                     <img class="mr-[10px]" src="./assets/images/fitnes-trackers.png" alt="AliExpress fitness trackers"
                       width="44" height="44">
                     AliExpress fitness trackers
                   </td>
-                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">UY3758</td>
+                  <td class="min-w-[55px] text-[12.6px] leading-[20.7px] text-[#8091A7]">UY3758</td>
                   <td class="font-medium text-[12.6px] leading-[20.7px] text-[#364A63]">$ 99.49</td>
-                  <td class="text-[12.6px] leading-[20.7px] text-[#8091A7]">73</td>
+                  <td class="px-4 text-[12.6px] leading-[20.7px] text-[#8091A7]">73</td>
                   <td class="text-[12.6px] leading-[20.7px] text-[#8091A7] capitalize">Men, holder</td>
                   <td><img class="w-[16px] h-[16px]" src="./assets/images/gold-star.svg" alt="gold star" width="16"
                       height="16"></td>
